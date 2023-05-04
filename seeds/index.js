@@ -23,9 +23,26 @@ async function main() {
             author: '64513655402d5539c988e13c',
             location: `${cities.at(random1000).city}, ${cities.at(random1000).state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
-            image: 'https://source.unsplash.com/collection/483251',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum quidem atque, itaque nobis placeat accusamus laboriosam quia, aspernatur voluptates facilis eos et? A nobis delectus non, nihil explicabo id ',
             price,
+            images: [
+                {
+                    url: 'https://res.cloudinary.com/dmu0hftt5/image/upload/v1683231576/YelpCamp/y1wgsrp9enalzrwvkcre.jpg',
+                    filename: 'YelpCamp/y1wgsrp9enalzrwvkcre',
+                },
+                {
+                    url: 'https://res.cloudinary.com/dmu0hftt5/image/upload/v1683231576/YelpCamp/n5dxwzh5ksz7pbpcsav3.jpg',
+                    filename: 'YelpCamp/n5dxwzh5ksz7pbpcsav3',
+                },
+                {
+                    url: 'https://res.cloudinary.com/dmu0hftt5/image/upload/v1683231577/YelpCamp/endrsrghuvkkzoru64os.jpg',
+                    filename: 'YelpCamp/endrsrghuvkkzoru64os',
+                },
+                {
+                    url: 'https://res.cloudinary.com/dmu0hftt5/image/upload/v1683231577/YelpCamp/lweabidyeiqx86rmrxx5.jpg',
+                    filename: 'YelpCamp/lweabidyeiqx86rmrxx5',
+                }
+            ],
         });
         await camp.save();
     }
