@@ -16,15 +16,23 @@ async function main() {
 
 
     await Campground.deleteMany({});
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 200; i++) {
         const random1000 = Math.floor((Math.random() * 1000));
         const price = Math.floor(Math.random() * 20) + 10;
         const camp = new Campground({
+            // Your user ID
             author: '64513655402d5539c988e13c',
             location: `${cities.at(random1000).city}, ${cities.at(random1000).state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum quidem atque, itaque nobis placeat accusamus laboriosam quia, aspernatur voluptates facilis eos et? A nobis delectus non, nihil explicabo id ',
             price,
+            geometry: {
+                type: 'Point',
+                coordinates: [
+                    cities.at(random1000).longitude,
+                    cities.at(random1000).latitude
+                ],
+            },
             images: [
                 {
                     url: 'https://res.cloudinary.com/dmu0hftt5/image/upload/v1683231576/YelpCamp/y1wgsrp9enalzrwvkcre.jpg',
