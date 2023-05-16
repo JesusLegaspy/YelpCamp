@@ -7,7 +7,7 @@ const Campground = require('../models/campground');
 
 main().catch(err => console.log(err));
 
-const sample = (array) => array.at(Math.floor(Math.random() * array.length));
+const sample = (array) => array[Math.floor(Math.random() * array.length)];
 
 async function main() {
     console.log('Connecting to database...');
@@ -22,15 +22,15 @@ async function main() {
         const camp = new Campground({
             // Your user ID
             author: '64513655402d5539c988e13c',
-            location: `${cities.at(random1000).city}, ${cities.at(random1000).state}`,
+            location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum quidem atque, itaque nobis placeat accusamus laboriosam quia, aspernatur voluptates facilis eos et? A nobis delectus non, nihil explicabo id ',
             price,
             geometry: {
                 type: 'Point',
                 coordinates: [
-                    cities.at(random1000).longitude,
-                    cities.at(random1000).latitude
+                    cities[random1000].longitude,
+                    cities[random1000].latitude
                 ],
             },
             images: [
